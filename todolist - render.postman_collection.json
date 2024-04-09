@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "946da40e-db93-43c3-a317-750c6802176b",
+		"name": "todolist - render",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34159507"
+	},
+	"item": [
+		{
+			"name": "Get all items",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hexschool-nodejs-todolist.onrender.com/todos",
+					"protocol": "https",
+					"host": [
+						"hexschool-nodejs-todolist",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new item",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hexschool-nodejs-todolist.onrender.com/todos",
+					"protocol": "https",
+					"host": [
+						"hexschool-nodejs-todolist",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete all items",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://hexschool-nodejs-todolist.onrender.com/todos",
+					"protocol": "https",
+					"host": [
+						"hexschool-nodejs-todolist",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete single item",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://hexschool-nodejs-todolist.onrender.com/todos/83738f7f-b81e-4dcc-ac6a-e58084bf90ac",
+					"protocol": "https",
+					"host": [
+						"hexschool-nodejs-todolist",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"todos",
+						"83738f7f-b81e-4dcc-ac6a-e58084bf90ac"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit single item",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "https://hexschool-nodejs-todolist.onrender.com/todos/28d87fc6-dfc9-4176-bca9-06029d632852",
+					"protocol": "https",
+					"host": [
+						"hexschool-nodejs-todolist",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"todos",
+						"28d87fc6-dfc9-4176-bca9-06029d632852"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
