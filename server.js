@@ -8,7 +8,7 @@ const todos = [];
 const requestListener = (req, res) => {
   let body = "";
   req.on("data", (chunk) => {
-    console.log(chunk);
+    // console.log(chunk);
     body += chunk;
   });
 
@@ -31,7 +31,7 @@ const requestListener = (req, res) => {
             id: uuidv4(),
           };
           todos.push(todo);
-          res.writeHead(200, headers);
+          res.writeHead(200, corsHeaders);
           res.write(
             JSON.stringify({
               status: "success",
@@ -48,7 +48,7 @@ const requestListener = (req, res) => {
     });
   } else if (req.url == "/todos" && req.method == "DELETE") {
     todos.length = 0;
-    res.writeHead(200, headers);
+    res.writeHead(200, corsHeaders);
     res.write(
       JSON.stringify({
         status: "success",
@@ -61,7 +61,7 @@ const requestListener = (req, res) => {
     const index = todos.findIndex((element) => element.id == id);
     if (index !== -1) {
       todos.splice(index, 1);
-      res.writeHead(200, headers);
+      res.writeHead(200, corsHeaders);
       res.write(
         JSON.stringify({
           status: "success",
@@ -80,7 +80,7 @@ const requestListener = (req, res) => {
         const index = todos.findIndex((element) => element.id == id);
         if (todo !== undefined && index !== -1) {
           todos[index].title = todo;
-          res.writeHead(200, headers);
+          res.writeHead(200, corsHeaders);
           res.write(
             JSON.stringify({
               status: "success",
@@ -96,10 +96,10 @@ const requestListener = (req, res) => {
       }
     });
   } else if (req.method == "OPTIONS") {
-    res.writeHead(200, headers);
+    res.writeHead(200, corsHeaders);
     res.end();
   } else {
-    res.writeHead(404, headers);
+    res.writeHead(404, corsHeaders);
     res.write(
       JSON.stringify({
         status: "false",
